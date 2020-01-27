@@ -28,13 +28,17 @@
 </head>
 
 <body>
-    <div ng-app="TopAngler" ng-controller="TopAnglerMain" class="main-app container">
+    <div ng-app="TopAngler" ng-controller="TopAnglerMain" class="main-app container" ng-init="init()">
         <div class="row app-header">
             <h1>TopAngler</h1>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-mg-9">
-                test
+                
+                <div ng-show="createNewDerby">
+                    Create a new fishing derby
+                    Name : <input ng-model="newDerbyName"/>
+                </div>
             </div>
         </div>
     </div>

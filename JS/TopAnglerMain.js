@@ -5,8 +5,22 @@ app.controller("TopAnglerMain", function ($scope, appSettings) {
     main.as = appSettings;
     main.test = "this is a test";
 
-    main.init = function (moduleId, moduleName) {
-        serviceClient.init(moduleId, moduleName);
-        appSettings.init();
+    main.init = function () {
+        main.createNewDerby = false;
+
+        // read from object files
+
+        // fishing events
+        main.derbies = localStorage.getItem('topAngler-derbies');
+
+        // people
+        main.people = localStorage.getItem('topAngler-people');
+
+        // groups
+        main.groups = localStorage.getItem('topAngler-groups');
+
+        if (!derbies) {
+            main.createNewDerby = true;
+        }
     };
 });
